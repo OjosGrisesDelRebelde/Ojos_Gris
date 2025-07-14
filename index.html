@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>OjosGrises</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head> 
+<body>
+  <header>
+    <h1>OjosGrises</h1>
+    <nav>
+      <a href="#">Inicio</a>
+      <a href="#galeria">Galería</a>
+      <a href="#resumen">Resumen</a>
+    </nav>
+  </header>
+
+  <aside id="resumen">
+    <h2>Resumen Mensual</h2>
+    <ul id="meses-lista">
+      <!-- JS rellenará esta lista -->
+    </ul>
+  </aside>
+
+  <main>
+    <section id="galeria">
+      <article class="mes" data-month="2025-04">
+        <h3>Abril 2025 (<span class="conteo">0</span> imágenes)</h3>
+        <div class="gallery">
+          <img src="images/foto1.jpg" alt="Dibujo artístico" class="gallery-item" data-date="2025-04-25" />
+          <img src="images/foto2.jpg" alt="Cielo nublado" class="gallery-item" data-date="2025-04-25" />
+        </div>
+      </article>
+
+      <article class="mes" data-month="2025-05">
+        <h3>Mayo 2025 (<span class="conteo">0</span> imágenes)</h3>
+        <div class="gallery">
+          <img src="images/foto3.jpg" alt="Paisaje" class="gallery-item" data-date="2025-05-10" />
+          <img src="images/foto4.jpg" alt="Retrato" class="gallery-item" data-date="2025-05-12" />
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox hidden">
+    <span class="close">×</span>
+    <img class="lightbox-img" src="" alt="" />
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
