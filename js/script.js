@@ -12,6 +12,7 @@ items.forEach(item => {
 });
 
 closeBtn.addEventListener('click', () => lightbox.classList.add('hidden'));
+
 lightbox.addEventListener('click', e => {
   if (e.target === lightbox) lightbox.classList.add('hidden');
 });
@@ -30,7 +31,7 @@ window.addEventListener('DOMContentLoaded', () => {
     art.querySelector('.conteo').textContent = count;
 
     const li = document.createElement('li');
-    li.innerHTML = `${nombreMes}: <span>${count}</span> imágenes`;
+    li.textContent = `${nombreMes}: ${count} imagen${count === 1 ? '' : 'es'}`;
     resumenLista.appendChild(li);
   });
 });
