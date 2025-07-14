@@ -19,12 +19,12 @@
     <aside id="menu-lateral">
       <div class="seccion">
         <h2>Resumen Mensual</h2>
-        <ul id="meses-lista"></ul>
+        <div id="resumen-agrupado"></div>
       </div>
       <div class="seccion">
         <h2>Enlaces</h2>
         <ul>
-          <li><a href="https://auraweb.carrd.co" target="_blank">Amigos</a></li>
+          <li><a href="https://ejemplo.com" target="_blank">Amigos</a></li>
           <li><a href="https://proyectos.com" target="_blank">Proyectos</a></li>
         </ul>
       </div>
@@ -33,30 +33,26 @@
     <main>
       <section id="galeria">
 
-        <!-- Más reciente: Junio 2025 -->
-        <article class="mes" data-month="2025-06" id="mes-2025-06">
-          <h3>Junio 2025 (<span class="conteo">0</span> imágenes)</h3>
+        <article class="mes" data-month="2020-04" id="mes-2020-04">
+          <h3>Abril 2020 (<span class="conteo">0</span> imágenes)</h3>
           <div class="gallery">
-            <div class="gallery-video" data-date="2025-06-02">
+            <img src="images/2020/abril/foto1.jpg" alt="Foto 1 de abril 2020" class="gallery-item" data-date="2020-04-01">
+            <img src="images/2020/abril/foto2.jpg" alt="Foto 2 de abril 2020" class="gallery-item" data-date="2020-04-02">
+            <img src="images/2020/abril/foto3.jpg" alt="Foto 3 de abril 2020" class="gallery-item" data-date="2020-04-03">
+            <img src="images/2020/abril/foto4.jpg" alt="Foto 4 de abril 2020" class="gallery-item" data-date="2020-04-04">
+
+            <div class="gallery-video" data-date="2020-04-10">
               <iframe
                 src="https://www.youtube.com/embed/m6Iq4V-ZqPk"
-                title="Video publicado en junio"
+                title="Video publicado en abril 2020"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen></iframe>
+              <p>Video publicado en abril de 2020</p>
             </div>
           </div>
         </article>
 
-        <!-- Mayo 2025 -->
-        <article class="mes" data-month="2025-05" id="mes-2025-05">
-          <h3>Mayo 2025 (<span class="conteo">0</span> imágenes)</h3>
-          <div class="gallery">
-            <img src="images/foto3.jpg" alt="Paisaje" class="gallery-item" data-date="2025-05-10" />
-            <img src="images/foto4.jpg" alt="Retrato" class="gallery-item" data-date="2025-05-12" />
-          </div>
-        </article>
 
-        <!-- Más antiguo: Abril 2025 -->
         <article class="mes" data-month="2025-04" id="mes-2025-04">
           <h3>Abril 2025 (<span class="conteo">0</span> imágenes)</h3>
           <div class="gallery">
@@ -65,12 +61,20 @@
           </div>
         </article>
 
+        <article class="mes" data-month="2025-05" id="mes-2025-05">
+          <h3>Mayo 2025 (<span class="conteo">0</span> imágenes)</h3>
+          <div class="gallery">
+            <img src="images/foto3.jpg" alt="Paisaje" class="gallery-item" data-date="2025-05-10" />
+            <img src="images/foto4.jpg" alt="Retrato" class="gallery-item" data-date="2025-05-12" />
+          </div>
+        </article>
+
       </section>
     </main>
   </div>
 
   <div id="lightbox" class="lightbox hidden">
-    <span class="close">×</span>
+    <span class="close">x</span>
     <img class="lightbox-img" src="" alt="">
   </div>
 

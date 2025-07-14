@@ -18,23 +18,41 @@ lightbox.addEventListener('click', e => {
 });
 
 window.addEventListener('DOMContentLoaded', () => {
-  const mesesArticulos = document.querySelectorAll('article.mes');
-  const resumenLista = document.getElementById('meses-lista');
+  const resumenContenedor = document.getElementById('resumen-agrupado');
+  const articulos = document.querySelectorAll('article.mes');
 
-  mesesArticulos.forEach(art => {
-    const month = art.getAttribute('data-month');
-    const [year, mes] = month.split('-');
-    const nombreMes = new Date(year, mes - 1).toLocaleString('es-ES', { month: 'long', year: 'numeric' });
-    const imgs = art.querySelectorAll('img.gallery-item');
-    const count = imgs.length;
+  const resumenPorAnio = {};
 
-    art.querySelector('.conteo').textContent = count;
+  articulos.forEach(art => {
+    const mes = art.getAttribute('data-month');
+    const [anio, mesNum] = mes.split('-');
+    const nombreMes = new Date(anio, mesNum - 1).toLocaleString('es-ES', { month: 'long' });
 
-    const li = document.createElement('li');
-    const link = document.createElement('a');
-    link.href = `#mes-${month}`;
-    link.textContent = `${nombreMes}: ${count} imagen${count !== 1 ? 'es' : ''}`;
-    li.appendChild(link);
-    resumenLista.appendChild(li);
+    const conteoImgs = art.querySelectorAll('img.gallery-item').length;
+    art.querySelector('.conteo').textContent = conteoImgs;
+
+    if (!resumenPorAnio[anio]) resumenPorAnio[anio] = [];
+
+    const link = `<a href="#mes-${anio}-${mesNum}">${nombreMes}: ${conteoImgs} imagen${conteoImgs !== 1 ? 'es' : ''}</a>`;
+    resumenPorAnio[anio].push(link);
   });
+
+  for (const anio in resumenPorAnio) {
+    const div = document.createElement('div');
+    div.classList.add('resumen-anio');
+
+    const titulo = document.createElement('h3');
+    titulo.textContent = anio;
+    div.appendChild(titulo);
+
+    const ul = document.createElement('ul');
+    resumenPorAnio[anio].forEach(linea => {
+      const li = document.createElement('li');
+      li.innerHTML = linea;
+      ul.appendChild(li);
+    });
+
+    div.appendChild(ul);
+    resumenContenedor.appendChild(div);
+  }
 });
