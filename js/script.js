@@ -16,7 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
     listaMeses.appendChild(li);
   });
 
-  // Lightbox
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.querySelector('.lightbox-img');
   const closeBtn = document.querySelector('.close');
