@@ -7,7 +7,7 @@ body {
 
 header {
   background-color: #1e1e1e;
-  color: #fff;
+  color: white;
   padding: 1rem;
   text-align: center;
 }
@@ -22,16 +22,48 @@ header nav a:hover {
   text-decoration: underline;
 }
 
-aside#resumen {
-  background-color: #1e1e1e;
+.contenedor {
+  display: flex;
+}
+
+#sidebar {
+  width: 250px;
+  background-color: #1a1a1a;
   padding: 1rem;
-  margin: 1rem auto;
-  border-radius: 6px;
-  max-width: 800px;
+  height: 100vh;
+  box-sizing: border-box;
+  overflow-y: auto;
+  border-right: 1px solid #333;
+  position: sticky;
+  top: 0;
+}
+
+#sidebar h2 {
+  font-size: 1.1rem;
+  color: #ffcc70;
+}
+
+#sidebar ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+#sidebar li {
+  margin: 0.5rem 0;
+}
+
+#sidebar a {
+  color: #89c4f4;
+  text-decoration: none;
+}
+
+#sidebar a:hover {
+  text-decoration: underline;
 }
 
 main {
-  padding: 1rem;
+  flex: 1;
+  padding: 2rem;
 }
 
 .gallery {
@@ -45,10 +77,9 @@ main {
 .gallery img {
   width: 90%;
   max-width: 700px;
-  height: auto;
   border-radius: 10px;
-  cursor: pointer;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
   transition: transform 0.2s ease;
 }
 
@@ -57,10 +88,7 @@ main {
 }
 
 article.mes {
-  max-width: 800px;
-  margin: 2rem auto;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid #333;
+  margin-bottom: 3rem;
 }
 
 article h3 {

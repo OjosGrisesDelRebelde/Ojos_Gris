@@ -12,36 +12,48 @@
     <nav>
       <a href="#">Inicio</a>
       <a href="#galeria">Galería</a>
-      <a href="#resumen">Resumen</a>
     </nav>
   </header>
 
-  <aside id="resumen">
-    <h2>Resumen Mensual</h2>
-    <ul id="meses-lista">
-      <!-- JS rellenará esta lista -->
-    </ul>
-  </aside>
+  <div class="contenedor">
+    <aside id="sidebar">
+      <section class="bloque">
+        <h2>Resumen Mensual</h2>
+        <ul id="meses-lista">
+          <!-- JS rellenará esta lista -->
+        </ul>
+      </section>
 
-  <main>
-    <section id="galeria">
-      <article class="mes" data-month="2025-04">
-        <h3>Abril 2025 (<span class="conteo">0</span> imágenes)</h3>
-        <div class="gallery">
-          <img src="images/foto1.jpg" alt="Dibujo artístico" class="gallery-item" data-date="2025-04-25" />
-          <img src="images/foto2.jpg" alt="Cielo nublado" class="gallery-item" data-date="2025-04-25" />
-        </div>
-      </article>
+      <section class="bloque">
+        <h2>Enlaces</h2>
+        <ul>
+          <li><a href="https://tusitio.com/amigos" target="_blank">Amigos</a></li>
+          <li><a href="https://tusitio.com/proyectos" target="_blank">Proyectos</a></li>
+          <li><a href="https://tusitio.com/contacto" target="_blank">Contacto</a></li>
+        </ul>
+      </section>
+    </aside>
 
-      <article class="mes" data-month="2025-05">
-        <h3>Mayo 2025 (<span class="conteo">0</span> imágenes)</h3>
-        <div class="gallery">
-          <img src="images/foto3.jpg" alt="Paisaje" class="gallery-item" data-date="2025-05-10" />
-          <img src="images/foto4.jpg" alt="Retrato" class="gallery-item" data-date="2025-05-12" />
-        </div>
-      </article>
-    </section>
-  </main>
+    <main>
+      <section id="galeria">
+        <article class="mes" data-month="2025-04">
+          <h3>Abril 2025 (<span class="conteo">0</span> imágenes)</h3>
+          <div class="gallery">
+            <img src="images/foto1.jpg" alt="Dibujo artístico" class="gallery-item" data-date="2025-04-25" />
+            <img src="images/foto2.jpg" alt="Cielo nublado" class="gallery-item" data-date="2025-04-25" />
+          </div>
+        </article>
+
+        <article class="mes" data-month="2025-05">
+          <h3>Mayo 2025 (<span class="conteo">0</span> imágenes)</h3>
+          <div class="gallery">
+            <img src="images/foto3.jpg" alt="Paisaje" class="gallery-item" data-date="2025-05-10" />
+            <img src="images/foto4.jpg" alt="Retrato" class="gallery-item" data-date="2025-05-12" />
+          </div>
+        </article>
+      </section>
+    </main>
+  </div>
 
   <div id="lightbox" class="lightbox hidden">
     <span class="close">×</span>
