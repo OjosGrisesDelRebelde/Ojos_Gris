@@ -7,63 +7,56 @@
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
-  <header>
-    <h1>OjosGrises</h1>
-    <nav>
-      <a href="#">Inicio</a>
-      <a href="#galeria">Galería</a>
-      <a href="#resumen">Resumen</a>
-    </nav>
-  </header>
+  <div class="container">
+    <aside id="resumen">
+      <h2>OjosGrises</h2>
+      <nav>
+        <a href="#">Inicio</a>
+        <a href="#galeria">Galería</a>
+      </nav>
+      <h3>Resumen Mensual</h3>
+      <ul id="meses-lista"></ul>
+      <h3>Enlaces</h3>
+      <ul>
+        <li><a href="https://ejemplo.com" target="_blank">Amigos</a></li>
+        <li><a href="https://otraweb.com" target="_blank">Proyectos</a></li>
+      </ul>
+    </aside>
 
-  <aside id="resumen">
-    <h2>Resumen Mensual</h2>
-    <ul id="meses-lista"></ul>
-    <h3>Enlaces</h3>
-    <ul>
-      <li><a href="https://ejemplo.com" target="_blank">Amigos</a></li>
-      <li><a href="https://otraweb.com" target="_blank">Proyectos</a></li>
-    </ul>
-  </aside>
-
-  <main>
-    <section id="galeria">
-
-      <!-- Abril -->
-      <article class="mes" data-month="2025-04">
-        <h3>Abril 2025 (<span class="conteo">0</span> imágenes)</h3>
-        <div class="gallery">
-          <img src="images/foto1.jpg" alt="Dibujo artístico" class="gallery-item" data-date="2025-04-25" />
-          <img src="images/foto2.jpg" alt="Cielo nublado" class="gallery-item" data-date="2025-04-25" />
-        </div>
-      </article>
-
-      <!-- Mayo -->
-      <article class="mes" data-month="2025-05">
-        <h3>Mayo 2025 (<span class="conteo">0</span> imágenes)</h3>
-        <div class="gallery">
-          <img src="images/foto3.jpg" alt="Paisaje" class="gallery-item" data-date="2025-05-10" />
-          <img src="images/foto4.jpg" alt="Retrato" class="gallery-item" data-date="2025-05-12" />
-        </div>
-      </article>
-
-      <!-- Junio (Video) -->
-      <article class="mes" data-month="2025-06">
-        <h3>Junio 2025 (<span class="conteo">0</span> imágenes)</h3>
-        <div class="gallery">
-          <div class="gallery-video" data-date="2025-06-02">
-            <iframe
-              src="https://www.youtube.com/embed/m6Iq4V-ZqPk"
-              title="Video destacado"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen></iframe>
-            <p>Video publicado en junio</p>
+    <main>
+      <section id="galeria">
+        <article class="mes" data-month="2025-04">
+          <h3>Abril 2025 (<span class="conteo">0</span> imágenes)</h3>
+          <div class="gallery">
+            <img src="images/foto1.jpg" alt="Dibujo artístico" class="gallery-item" data-date="2025-04-25" />
+            <img src="images/foto2.jpg" alt="Cielo nublado" class="gallery-item" data-date="2025-04-25" />
           </div>
-        </div>
-      </article>
+        </article>
 
-    </section>
-  </main>
+        <article class="mes" data-month="2025-05">
+          <h3>Mayo 2025 (<span class="conteo">0</span> imágenes)</h3>
+          <div class="gallery">
+            <img src="images/foto3.jpg" alt="Paisaje" class="gallery-item" data-date="2025-05-10" />
+            <img src="images/foto4.jpg" alt="Retrato" class="gallery-item" data-date="2025-05-12" />
+          </div>
+        </article>
+
+        <article class="mes" data-month="2025-06">
+          <h3>Junio 2025 (<span class="conteo">0</span> imágenes)</h3>
+          <div class="gallery">
+            <div class="gallery-video" data-date="2025-06-02">
+              <iframe
+                src="https://www.youtube.com/embed/m6Iq4V-ZqPk"
+                title="Video destacado"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+              <p>Video publicado en junio</p>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+  </div>
 
   <div id="lightbox" class="lightbox hidden">
     <span class="close">×</span>
