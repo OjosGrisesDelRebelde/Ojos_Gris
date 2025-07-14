@@ -1,42 +1,40 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const conteos = document.querySelectorAll('.mes');
-  const listaMeses = document.getElementById('meses-lista');
+// Lightbox
+const items = document.querySelectorAll('.gallery-item');
+const lightbox = document.getElementById('lightbox');
+const lbImage = document.querySelector('.lightbox-img');
+const closeBtn = document.querySelector('.close');
 
-  conteos.forEach(mes => {
-    const month = mes.dataset.month;
-    const count = mes.querySelectorAll('img').length;
-    mes.querySelector('.conteo').textContent = count;
+items.forEach(item => {
+  item.addEventListener('click', () => {
+    lbImage.src = item.src;
+    lbImage.alt = item.alt;
+    lightbox.classList.remove('hidden');
+  });
+});
 
-    const [año, mesNum] = month.split('-');
-    const fecha = new Date(año, mesNum - 1);
-    const nombreMes = fecha.toLocaleString('es-ES', { month: 'long', year: 'numeric' });
+closeBtn.addEventListener('click', () => lightbox.classList.add('hidden'));
+lightbox.addEventListener('click', e => {
+  if (e.target === lightbox) lightbox.classList.add('hidden');
+});
 
+// Conteo mensual de imágenes (solo IMG, no video)
+window.addEventListener('DOMContentLoaded', () => {
+  const mesesArticulos = document.querySelectorAll('article.mes');
+  const resumenLista = document.getElementById('meses-lista');
+
+  mesesArticulos.forEach(art => {
+    const month = art.getAttribute('data-month');
+    const [year, mes] = month.split('-');
+    const nombreMes = new Date(year, mes - 1).toLocaleString('es-ES', { month: 'long', year: 'numeric' });
+    const imgs = art.querySelectorAll('img.gallery-item');
+    const count = imgs.length;
+
+    // Actualiza el conteo visible
+    art.querySelector('.conteo').textContent = count;
+
+    // Agrega al resumen mensual
     const li = document.createElement('li');
-    li.textContent = `${nombreMes}: ${count} imagen${count !== 1 ? 'es' : ''}`;
-    listaMeses.appendChild(li);
-  });
-
-  const lightbox = document.getElementById('lightbox');
-  const lightboxImg = document.querySelector('.lightbox-img');
-  const closeBtn = document.querySelector('.close');
-
-  document.querySelectorAll('.gallery-item').forEach(img => {
-    img.addEventListener('click', () => {
-      lightbox.classList.remove('hidden');
-      lightboxImg.src = img.src;
-      lightboxImg.alt = img.alt;
-    });
-  });
-
-  closeBtn.addEventListener('click', () => {
-    lightbox.classList.add('hidden');
-    lightboxImg.src = '';
-  });
-
-  lightbox.addEventListener('click', e => {
-    if (e.target === lightbox) {
-      lightbox.classList.add('hidden');
-      lightboxImg.src = '';
-    }
+    li.innerHTML = `${nombreMes}: <span>${count}</span> imágenes`;
+    resumenLista.appendChild(li);
   });
 });
