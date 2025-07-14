@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>OjosGrises</title>
   <link rel="stylesheet" href="css/styles.css" />
 </head>
@@ -15,16 +15,17 @@
     </nav>
   </header>
 
-  <div class="container">
+  <div class="layout">
     <aside id="menu-lateral">
       <div class="seccion">
         <h2>Resumen Mensual</h2>
-        <ul id="meses-lista"></ul>
+        <ul id="resumen-anios"></ul>
       </div>
+
       <div class="seccion">
         <h2>Enlaces</h2>
         <ul>
-          <li><a href="https://auraweb.carrd.co" target="_blank">Amigos</a></li>
+          <li><a href="https://ejemplo.com" target="_blank">Amigos</a></li>
           <li><a href="https://proyectos.com" target="_blank">Proyectos</a></li>
         </ul>
       </div>
@@ -32,15 +33,12 @@
 
     <main>
       <section id="galeria">
-
-        <!-- Más reciente: Junio 2025 -->
         <article class="mes" data-month="2025-06" id="mes-2025-06">
           <h3>Junio 2025 (<span class="conteo">0</span> imágenes)</h3>
           <div class="gallery">
             <div class="gallery-video" data-date="2025-06-02">
-              <iframe
-                src="https://www.youtube.com/embed/m6Iq4V-ZqPk"
-                title="Video publicado en junio"
+              <iframe src="https://www.youtube.com/embed/m6Iq4V-ZqPk"
+                title="Video compartido"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen></iframe>
               <p>Video compartido como publicación</p>
@@ -48,7 +46,6 @@
           </div>
         </article>
 
-        <!-- Mayo 2025 -->
         <article class="mes" data-month="2025-05" id="mes-2025-05">
           <h3>Mayo 2025 (<span class="conteo">0</span> imágenes)</h3>
           <div class="gallery">
@@ -57,7 +54,6 @@
           </div>
         </article>
 
-        <!-- Más antiguo: Abril 2025 -->
         <article class="mes" data-month="2025-04" id="mes-2025-04">
           <h3>Abril 2025 (<span class="conteo">0</span> imágenes)</h3>
           <div class="gallery">
@@ -65,14 +61,8 @@
             <img src="images/foto2.jpg" alt="Cielo nublado" class="gallery-item" data-date="2025-04-25" />
           </div>
         </article>
-
       </section>
     </main>
-  </div>
-
-  <div id="lightbox" class="lightbox hidden">
-    <span class="close">×</span>
-    <img class="lightbox-img" src="" alt="">
   </div>
 
   <script src="js/script.js"></script>
