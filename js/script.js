@@ -1,4 +1,3 @@
-// Lightbox
 const items = document.querySelectorAll('.gallery-item');
 const lightbox = document.getElementById('lightbox');
 const lbImage = document.querySelector('.lightbox-img');
@@ -17,7 +16,6 @@ lightbox.addEventListener('click', e => {
   if (e.target === lightbox) lightbox.classList.add('hidden');
 });
 
-// Conteo mensual de imágenes (solo IMG, no video)
 window.addEventListener('DOMContentLoaded', () => {
   const mesesArticulos = document.querySelectorAll('article.mes');
   const resumenLista = document.getElementById('meses-lista');
@@ -29,10 +27,8 @@ window.addEventListener('DOMContentLoaded', () => {
     const imgs = art.querySelectorAll('img.gallery-item');
     const count = imgs.length;
 
-    // Actualiza el conteo visible
     art.querySelector('.conteo').textContent = count;
 
-    // Agrega al resumen mensual
     const li = document.createElement('li');
     li.innerHTML = `${nombreMes}: <span>${count}</span> imágenes`;
     resumenLista.appendChild(li);
