@@ -31,7 +31,10 @@ window.addEventListener('DOMContentLoaded', () => {
     art.querySelector('.conteo').textContent = count;
 
     const li = document.createElement('li');
-    li.textContent = `${nombreMes}: ${count} imagen${count !== 1 ? 'es' : ''}`;
+    const link = document.createElement('a');
+    link.href = `#mes-${month}`;
+    link.textContent = `${nombreMes}: ${count} imagen${count !== 1 ? 'es' : ''}`;
+    li.appendChild(link);
     resumenLista.appendChild(li);
   });
 });
